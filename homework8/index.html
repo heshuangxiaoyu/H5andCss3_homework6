@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework8</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+        }
+
+        .daohang {
+            width: 100%;
+            background-color: black;
+        }
+
+        .listNav {
+            width: 83%;
+            height: 50px;
+            margin: 0 auto;
+            padding: 0;
+            flex-flow: row wrap;
+            justify-content: center;
+            list-style: none;
+            align-items: center;
+        }
+
+        li {
+            flex: 1;
+            display: inline-block;
+            color: white;
+            position: relative;
+            bottom: 15px;
+            margin-right: 28px;
+        }
+
+        .listnav_2 {
+            font-size: 13px;
+        }
+
+        .listnav_2 span {
+            display: inline-block;
+            width: 15px;
+            height: 13px;
+            background-image: url('./image/tubiao.png');
+            background-position-x: -230px;
+            background-position-y: -27px;
+        }
+
+        .listNav-3 {
+            font-size: 14px;
+        }
+
+        .geci {
+            width: 30%;
+            display: inline-block;
+            margin-left: 20%;
+            margin-top: 50px;
+        }
+
+        .geci_title {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .geci_zuozhe {
+            float: left;
+            text-align: center;
+            width: 460px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .geci_zuozhe span {
+            padding: 2px;
+            font-size: 13px;
+        }
+
+        .geci_s2 {
+            color: rgb(247, 192, 120);
+        }
+
+        .pl_img {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background-image: url('./image/xinxi.jpg');
+            background-repeat: no-repeat;
+            background-position-x: 5px;
+            background-position-y: 7px;
+        }
+
+        .geci_subtime {
+            text-align: center;
+            font-size: 13px;
+            height: 20px;
+            width: 460px;
+            margin-top: 50px;
+            height: 30px;
+            border-bottom: 1px solid rgb(112, 112, 112);
+        }
+
+        .geci_zhu span {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .geci_zhu {
+            text-align: center;
+        }
+
+        .geci_mus {
+            height: 530px;
+            border-bottom: 1px solid rgb(112, 112, 112);
+        }
+
+        .tiao {
+            width: 7px;
+            height: 90px;
+            background-color: darkgray;
+            position: absolute;
+            top: 350px;
+            left: 850px;
+            border-radius: 7px;
+        }
+
+        .audio {
+            width: 35%;
+            top: 100px;
+            left: 60%;
+            position: absolute;
+        }
+
+        .audio_img {
+            margin-left: 30%;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            margin-top: 20px;
+        }
+
+        .audio_play {
+            width: 531px;
+            height: 60px;
+            margin-top: 40px;
+            margin-left: 10px;
+            float: left;
+            position: relative;
+        }
+
+        .play {
+            background-image: url('./image/tubiao3.jpg');
+            width: 40px;
+            height: 40px;
+            margin: 10px 0 0 22px;
+            display: inline-block;
+            background-position: -110px 0px;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            background-color: rgb(112, 112, 112);
+        }
+
+        #wp_bufBar {
+            width: 300px;
+            height: 25px;
+            display: inline-block;
+            position: absolute;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        #wp_processBar {
+            width: 300px;
+            color: rgb(112, 112, 112);
+        }
+
+        #wp_playTime {
+            width: 20px;
+            display: inline-block;
+            position: absolute;
+            left: 390px;
+            top: 8px;
+            font-size: 14px;
+            color: rgb(112, 112, 112);
+
+        }
+
+        #sound {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            left: 440px;
+            top: 22px;
+            background-image: url('./image/tubiao3.jpg');
+            background-position: -45px 0px;
+            background-color: rgb(247, 192, 120);
+
+        }
+
+        .load {
+            width: 200px;
+            height: 35px;
+            background-image: url('./image/tubiao3.jpg');
+            background-position: 0px -50px;
+            position: absolute;
+            left: 200px;
+            top: 370px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .load_p {
+            margin: 0;
+            text-align: center;
+            display: inline-block;
+            position: absolute;
+            right: 20px;
+            top: 5px;
+        }
+
+        .load_img {
+            width: 23px;
+            height: 28px;
+            display: inline-block;
+            background-image: url('./image/tubiao.png');
+            background-position: -240px -133px;
+            position: absolute;
+            left: 15px;
+        }
+
+        .pl {
+            /* background-color: rgb(235, 145, 145); */
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .pl_count p {
+            display: inline-block;
+            color: rgb(112, 112, 112);
+        }
+
+        .pl_count {
+            border-bottom: 1px solid rgb(122, 121, 121);
+        }
+
+        .count_2 {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .pl_fabiao {
+            position: absolute;
+            margin-top: 10px;
+            width: 700px;
+        }
+
+        .pl_fabiao div {
+            display: inline-block;
+        }
+
+        .fabiao_shuru {
+            position: absolute;
+            top: 0px;
+            width: 620px;
+            height: 100px;
+            border: 1px solid rgb(112, 112, 112);
+            right: 0px;
+        }
+
+        .sr_in {
+            border: 0px;
+            width: 620px;
+        }
+
+        .fabiao_dikuang {
+            position: absolute;
+            top: 120px;
+            right: 0px;
+        }
+
+        .dk_1 {
+            width: 20px;
+            height: 20px;
+            background-image: url('./image/tubiao.png');
+            background-position: -310px -195px;
+        }
+
+        .dk_2 {
+            margin-left: 450px;
+            font-size: 14px;
+            color: silver;
+        }
+
+        .dk_3 {
+            background-color: rgb(243, 179, 83);
+            border: 0px;
+            color: white;
+            width: 50px;
+            margin-left: 15px;
+        }
+
+        .pl_last {
+            margin-top: 180px;
+            position: absolute;
+            width: 700px;
+        }
+
+        .last_text {
+            height: 40px;
+            border-bottom: 1px solid rgb(119, 119, 119);
+        }
+
+        .items {
+            margin-top: 10px;
+            position: relative;
+            width: 700px;
+            height: 90px;
+            border-bottom: 1px dotted rgb(119, 119, 119);
+        }
+
+        .items div {
+            display: inline-block;
+        }
+
+        .items_tou {
+            width: 70xpx;
+        }
+
+        .items_username p {
+            margin: 0;
+            display: inline-block;
+        }
+
+        .items_username {
+            position: absolute;
+            margin-left: 10px;
+            width: 625px;
+        }
+
+        .fenx {
+            position: absolute;
+            left: 580px;
+            font-size: 12px;
+        }
+
+        .items_content {
+            position: absolute;
+            top: 25px;
+            margin-left: 10px;
+        }
+
+        .item_dik {
+            position: absolute;
+            top: 60px;
+            margin-left: 10px;
+            width: 625px;
+            height: 30px;
+        }
+
+        .dik_time {
+            font-size: 13px;
+        }
+
+        .dik_you {
+            position: absolute;
+            left: 500px;
+        }
+
+        .dik_you span img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .content_p {
+            margin: 0;
+            position: absolute;
+            top: 25px;
+            padding-left: 10px;
+            font-size: 13px;
+        }
+
+        .fenye {
+            position: relative;
+            top: 560px;
+            margin: 0 auto;
+            width: 200px;
+        }
+
+        .fenye span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: rgb(222, 222, 226);
+            text-align: center;
+        }
+    </style>
+    <script>
+        var ifplay = 0;
+        var ifsong = 0;
+        var list = [
+            { username: '郭子仪', content: 'too', time: '2017-06-03 16:58:02' },
+            { username: 'Forget', content: '我喜欢很多歌曲，喜欢过很多唱歌的人，那些有时候不是我的爱好，已经成为了我青春的回忆', time: '2017-06-03 16:58:02' },
+            { username: '亚里士多德', content: '晚会表演这歌', time: '2017-5-14 16:16:53' }
+        ]
+        var btn = document.getElementById('btn');
+        function controls() {
+            if (ifplay == 0) {
+                var playbtn = document.getElementById('wp_playBtn');
+                var timecur = document.getElementById('wp_playTime');
+                var audio = document.getElementById('mymusic');
+                var duration = audio.duration;
+                var range = document.getElementById('wp_processBar');
+                // range.attr({'max':duration});
+                range.max = duration;
+                audio.play();
+                ifplay = 1;
+                playbtn.style.backgroundPosition = "-207px 0px";
+                function timer() {
+                    var t = parseInt(Math.round(audio.currentTime));
+                    range.value = t;
+                    timecur.innerHTML = timeleng(t);
+                    t = parseInt(audio.currentTime);
+                    if (t < duration) {
+                        setTimeout(timer, 1000);
+                    } else {
+                        clearTimeout(timer);
+                    }
+                }
+                timer();
+                return ifplay;
+            } else {
+                var playbtn = document.getElementById('wp_playBtn');
+                var audio = document.getElementById('mymusic');
+                audio.pause();
+                ifplay = 0;
+                playbtn.style.backgroundPosition = " -110px 0px"
+                return ifplay;
+            }
+        }
+        function rangechange() {
+            var range = document.getElementById('wp_processBar');
+            var audio = document.getElementById('mymusic');
+            this.value = audio.currentTime;
+            console.log(this.value);
+            range.value = this.value;
+        }
+        function timeleng(time) {
+            var m = 0,
+                s = 0,
+                ms = '00',
+                ss = '00';
+            time = Math.floor(time % 3600);
+            m = Math.floor(time / 60);
+            s = Math.floor(time % 60);
+            ss = s < 10 ? '0' + s : s + '';
+            ms = m < 10 ? '0' + m : m + '';
+            return ms + ":" + ss;
+        }
+        function sound() {
+            var audio = document.getElementById('mymusic');
+            var jing = document.getElementById('sound');
+            if (ifsong == 0) {
+                audio.muted = true;
+                jing.style.backgroundPosition = "0px -22px"
+                return ifsong = 1;
+            } else {
+                audio.muted = false;
+                jing.style.backgroundPosition = " -45px 0px"
+                return ifsong = 0;
+            }
+        }
+
+
+        function adddoc() {
+            var pl = document.getElementById('pl_last')
+            var tou = document.createElement('div');
+            var itemusername = document.createElement('div')
+            var username = document.createElement('p');
+            var fenx = document.createElement('p');
+            var dik = document.createElement('div');
+            var dtime = document.createElement('div');
+            var dyou = document.createElement('div');
+            var items = document.createElement('div')
+            var content = document.createElement('div');
+            var img = document.createElement('img');
+            var conp = document.createElement('p')
+            var youspan = document.createElement('span');
+            conp.className = 'content_p'
+            img.src = './image/userimg.jpg';
+            content.className = 'content';
+            items.className = 'items'
+            dyou.className = 'dik_you';
+            dtime.className = 'dik_time';
+            dik.className = 'item_dik';
+            fenx.className = 'fenx';
+            username.className = 'username';
+            itemusername.className = 'items_username';
+            tou.className = 'items_tou'
+
+            pl.append(items);
+            items.appendChild(tou);
+            items.appendChild(itemusername);
+            items.appendChild(content);
+            items.appendChild(dik);
+            tou.appendChild(img);
+            itemusername.appendChild(username);
+            itemusername.appendChild(fenx);
+            dik.appendChild(dtime);
+            dik.appendChild(dyou);
+            content.appendChild(conp)
+            console.log('1');
+            dyou.appendChild(youspan);
+            youspan.innerHTML = ('删除 点赞 回复')
+        }
+
+        function formatDate(now) {
+            var year = now.getFullYear();  //取得4位数的年份
+            var month = now.getMonth() + 1;  //取得日期中的月份，其中0表示1月，11表示12月
+            var date = now.getDate();      //返回日期月份中的天数（1到31）
+            var hour = now.getHours();     //返回日期中的小时数（0到23）
+            var minute = now.getMinutes(); //返回日期中的分钟数（0到59）
+            var second = now.getSeconds(); //返回日期中的秒数（0到59）
+            return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+        }
+
+        function add() {
+            adddoc();
+            var shuru = document.getElementById('in');
+            var length = list.length
+            var value = shuru.value;
+            var date = new Date();
+            var srr = {};
+            var g = new Date().getTime();
+            var d = new Date(g);
+            var date = formatDate(d);
+            var username = document.getElementsByClassName('username');
+            var content = document.getElementsByClassName('items_content');
+            var time = document.getElementsByClassName('dik_time');
+            var conp = document.getElementsByClassName('content_p')
+            srr.time = date;
+            srr.username = '郭子仪';
+            srr.content = value;
+            username[length].innerHTML = (srr.username);
+            conp[length].innerHTML = (srr.content);
+            time[length].innerHTML = (srr.time);
+            list.push(srr);
+            console.log(value);
+            localStorage.setItem('list', JSON.stringify(list));
+            shuru.value = '';
+        }
+
+        window.onload = function () {
+            localStorage.setItem('list', JSON.stringify(list))
+            var alist = JSON.parse(localStorage.getItem('list'));
+            alist.map((item, index) => {
+                adddoc();
+                var username = document.getElementsByClassName('username');
+                var content = document.getElementsByClassName('items_content');
+                var time = document.getElementsByClassName('dik_time');
+                var conp = document.getElementsByClassName('content_p')
+                username[index].innerHTML = (alist[index].username);
+                conp[index].innerHTML = (alist[index].content);
+                time[index].innerHTML = (alist[index].time);
+                console.log(conp)
+
+            })
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="daohang">
+            <ul class="listNav">
+                <li style="bottom: 0px;">
+                    <img src="./image/logo.jpg" />
+                </li>
+                <li style="color: rgb(245, 152, 86);">首页</li>
+                <li>榜单</li>
+                <li>歌手</li>
+                <li>下载酷我客户端</li>
+                <li class="listnav_2">
+                    <span></span>
+                    美女秀
+                </li>
+                <li class="listnav_2">
+                    <span></span>
+                    酷我耳机
+                </li>
+                <li class="listnav_2">
+                    <span></span>
+                    VIP会员
+                </li>
+                <li class="listnav_2">
+                    <span></span>
+                    i听
+                </li>
+                <li class="listNav-3">更多服务</li>
+                <li class="listNav-3">登录</li>
+                <li>∧</li>
+                <li style="bottom: 10px;">
+                    <img src="./image/search.png" />
+                </li>
+            </ul>
+        </div>
+        <div class="geci_mus">
+            <div class="geci">
+                <div class="geci_title">喜洋洋</div>
+                <div class="geci_zuozhe">
+                    <span class="geci_s1">专辑：</span>
+                    <span class="geci_s2">儿歌大全</span>
+                    <span class="geci_s1">歌手：</span>
+                    <span class="geci_s2">华语群星</span>
+                    <span>分享</span>
+                    <span class="pl_img"></span>
+                    <span class="geci_s2">评论</span>
+                </div>
+                <div class="geci_subtime">
+                    上传时间：2015-10-02 歌曲来源：民大相思湖网球社
+                </div>
+                <div class="geci_zhu">
+                    <span>白云因为我变得柔软</span>
+                    <span>别看我只是一只羊</span>
+                    <span>羊儿的聪明难以想象</span>
+                    <span>天再高心情一样奔放</span>
+                    <span>每天都追赶太阳</span>
+                    <span style="color: coral;">有什么难题 去牵绊我 都不会去心伤</span>
+                    <span>有什么危险 在我面前 也不会去慌乱</span>
+                    <span>就算有狼群 把我追捕 也当做游戏一场</span>
+                    <span>在什么时间 都会开心 笑容都会飞翔</span>
+                    <span>就算会摔倒 站了起来 永远不会沮丧</span>
+                    <span>在所有天气 拥有叫人 大笑的力量</span>
+                    <span>虽然我只是只羊</span>
+                </div>
+            </div>
+            <div class="tiao"></div>
+            <div class="audio">
+                <img src="./image/mutu.jpg" class="audio_img" />
+                <div class="audio_play">
+                    <audio autoplay="autoplay" id="mymusic">
+                        <source src="./image/1.mp3" type="audio/mp3" />
+                    </audio>
+                    <div class="play" id="wp_playBtn" onclick="controls()"></div>
+                    <div id="wp_bufBar">
+                        <input type="range" id="wp_processBar" min=0 max=100 onchange="rangechage()" value="0" />
+
+                    </div>
+                    <p id="wp_playTime">00.00</p>
+                    <div id="sound" onclick="sound()"></div>
+                </div>
+                <div class="load">
+                    <div class="load_img"></div>
+                    <p class="load_p">免费下载这首歌</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="pl">
+            <div class="pl_count">
+                <p class="count_1">评论</p>
+                <p class="count_2">1703条评论</p>
+            </div>
+            <div class="pl_fabiao">
+                <div class="fabiao_tou">
+                    <img src="./image/userimg.jpg" />
+                </div>
+                <div class="fabiao_shuru">
+                    <input type="text" placeholder="分享你的音乐见解" class="sr_in" id="in" />
+                </div>
+                <div class="fabiao_dikuang">
+                    <div class="dk_1"></div>
+                    <div class="dk_2">已输入个<span>0</span>字</div>
+                    <input type="button" value="评论" class="dk_3" id="btn" onclick="add()" />
+                </div>
+            </div>
+            <div class="pl_last" id="pl_last">
+                <div class="last_text">精彩评论</div>
+
+            </div>
+        </div>
+        <div class="fenye">
+            <span>﹤</span>
+            <span style="background-color: rgb(247, 184, 112);">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span style="background-color: white;">…</span>
+            <span>17</span>
+            <span>﹥</span>
+        </div>
+    </div>
+</body>
+
+</html>
